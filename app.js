@@ -1,10 +1,21 @@
 import express from "express";
+import mongoose from "mongoose";
+import { config } from 'dotenv'
+
+config()
 
 const app = express()
-const porta = process.env.PORT || 3000
 
-app.listen(porta, ()=>{
-    console.log(`Aplicação online na porta: ${porta}`)
+const PORT = process.env.PORT || "local"
+
+const USER = process.env.USER_DB || "local"
+const DATABASE = process.env.DATABASE || "local"
+const PASSWORD = process.env.PASSWORD || "local"
+const CLUSTER = process.env.CLUSTER || "local"
+
+mongoose.connect(`mongodb+srv://${USER}:${PASSWORD}@${CLUSTER}.${DATABASE}.mongodb.net/`)
+app.listen(PORT, ()=>{
+    console.log(`Aplicação online na porta: ${PORT}`)
 })
 
 app.use(express.json())
