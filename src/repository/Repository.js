@@ -1,11 +1,10 @@
-import mongoose from "moongose"
 
 class Repository {
 
     /**
      * Método geral de registrar
      * @param {mongooseModel} mongoModel 
-     * @param {*} data 
+     * @param {Object} data 
      */
     static async create(mongoModel, data){
         await mongoModel.create(data)
@@ -48,7 +47,7 @@ class Repository {
      * Método geral de atualização por id
      * @param {mongooseModel} mongoModel 
      * @param {String} id 
-     * @param {String} data 
+     * @param {Object} data 
      * @returns {Data}
      */
     static async updateById(mongoModel, id, data){
