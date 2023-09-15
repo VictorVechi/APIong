@@ -3,7 +3,6 @@ import Pets from "../model/PetsModel.js"
 
 class PetsRepository extends Repository{
 
-
     static async criarPet (data){
         await this.create(Pets, data)
     }
