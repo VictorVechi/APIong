@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import { config } from 'dotenv'
 import cors from "cors"
+import PetsController from "./src/controller/PetsController.js";
 
 config()
 
@@ -25,3 +26,4 @@ mongoose.connect(`mongodb+srv://${USER}:${PASSWORD}@${CLUSTER}.${DATABASE}.mongo
 
 app.use(express.json())
 app.use(cors('*'))
+PetsController.rotas(app)
