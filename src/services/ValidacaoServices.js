@@ -38,16 +38,24 @@ class ValidacaoServices {
         return telefone.length == 11 && !isNaN(telefone)
     }
 
-    static async validarCep(cep){
+    static validarCep(cep){
         return cep.length == 8 && !isNaN(cep)
     }
 
-    static async validarRua(rua){
+    static  validarRua(rua){
         return rua.length > 2 && typeof(rua) == "string"
     }
 
-    static async validarNumeroRua(numero){
+    static validarNumeroRua(numero){
         return numero.length > 0 && typeof(numero) == "string"
+    }
+
+    static validarCpf_Cnpj(entrada){
+        return entrada.length >= 11 && typeof(entrada) == "string"
+    }
+
+    static validarValorDoacao(valor){
+        return !isNaN(valor)
     }
 
 } export default ValidacaoServices
