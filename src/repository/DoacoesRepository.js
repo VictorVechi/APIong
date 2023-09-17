@@ -24,4 +24,4 @@ class DoacoesRepository extends Repository {
     static async deletarDoacoes(id){
         await this.deleteById(Doacoes, id)
     }
-}
+} export default DoacoesRepository
