@@ -27,8 +27,8 @@ class EnderecoUsuarioController {
             const body = req.body
             const valido = EnderecoUsuarioServices.validarCampos(...Object.values(body))
             if(valido) {
-                await EnderecoUsuarioRepository.criarEnderecoUsuario(body)
-                res.status(201).json({ message: 'Endereço do Usuário criado com sucesso' })
+                const id = await EnderecoUsuarioRepository.criarEnderecoUsuario(body)
+                res.status(201).json({ message: 'Endereço do Usuário criado com sucesso', id: `${id}`})
             } else {
                 res.status(400).json({message:"Operação inválida, verifique os campos e tente novamente"})
             }
