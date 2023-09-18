@@ -13,7 +13,7 @@ class UnidadesRepository extends Repository {
     }
 
     static async buscarUnidadesPorId(id){
-        const response = await this.findById(Usuarios, id)
+        const response = await this.findById(Unidades, id)
         return response
     }
 
