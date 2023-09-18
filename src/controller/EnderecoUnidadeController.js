@@ -26,8 +26,8 @@ class EnderecoUnidadeController {
 			const body = req.body
 			const valido = EnderecoUnidadeServices.validarCampos(...Object.values(body))
 			if (valido) {
-				await EnderecoUnidadeRepository.criarEnderecoUnidade(body)
-				res.status(201).json({ message: 'Endereço da Unidade criado com sucesso' })
+				const id = await EnderecoUnidadeRepository.criarEnderecoUnidade(body)
+				res.status(201).json({ message: 'Endereço da Unidade criado com sucesso', id:`${id}` })
 			} else {
 				res.status(400).json({ message: "Operação inválida, verifique os campos e tente novamente" })
 			}
