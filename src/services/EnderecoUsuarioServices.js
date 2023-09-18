@@ -9,7 +9,7 @@ class EnderecoUsuarioServices extends ValidacaoServices {
     }
 
     static validarComplemento(complemento){
-        return complemento.lengt > 0
+        return complemento.length > 0
     }
   
     static validarCampos(cep, rua, numero, complemento){
