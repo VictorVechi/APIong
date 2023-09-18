@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const EnderecoUsuario = mongoose.model("Endereco_Usuario",{
+const EnderecoUsuario = mongoose.model("EnderecoUsuario",{
     cep: String,
     rua: String,
     numero: String,
