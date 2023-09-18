@@ -4,6 +4,7 @@ import { config } from 'dotenv'
 import cors from "cors"
 import PetsController from "./src/controller/PetsController.js";
 import DoacoesControllers from "./src/controller/DoacoesController.js";
+import UnidadesController from "./src/controller/UnidadesController.js";
 
 config()
 
@@ -29,3 +30,5 @@ app.use(express.json())
 app.use(cors('*'))
 PetsController.rotas(app)
 DoacoesControllers.rotas(app)
+UnidadesController.rotas(app)
+// UsuariosController.rotas(app)
