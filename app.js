@@ -7,6 +7,7 @@ import DoacoesControllers from "./src/controller/DoacoesController.js";
 import UnidadesController from "./src/controller/UnidadesController.js";
 import UsuariosController from "./src/controller/UsuariosController.js";
 import EnderecoUnidadeController from "./src/controller/EnderecoUnidadeController.js";
+import EnderecoUsuarioController from "./src/controller/EnderecoUsuarioController.js";
 
 config()
 
@@ -35,4 +36,4 @@ DoacoesControllers.rotas(app)
 UnidadesController.rotas(app)
 UsuariosController.rotas(app)
 EnderecoUnidadeController.rotas(app)
-// EnderecoUsuarioController.rotas(app)
+EnderecoUsuarioController.rotas(app)
