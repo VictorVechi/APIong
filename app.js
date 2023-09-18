@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import { config } from 'dotenv'
 import cors from "cors"
 import PetsController from "./src/controller/PetsController.js";
+import DoacoesControllers from "./src/controller/DoacoesController.js";
 
 config()
 
@@ -27,3 +28,4 @@ mongoose.connect(`mongodb+srv://${USER}:${PASSWORD}@${CLUSTER}.${DATABASE}.mongo
 app.use(express.json())
 app.use(cors('*'))
 PetsController.rotas(app)
+DoacoesControllers.rotas(app)
