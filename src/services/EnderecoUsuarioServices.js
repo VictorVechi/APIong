@@ -13,8 +13,8 @@ class EnderecoUsuarioServices extends ValidacaoServices {
     }
   
     static validarCampos(cep, rua, numero, complemento){
-        const complemento = this.validarComplemento(complemento)
-        return this.validarCep(cep) && this.validarRua(rua) && this.validarNumeroRua(numero) && complemento
+        const complementoValido = this.validarComplemento(complemento)
+        return this.validarCep(cep) && this.validarRua(rua) && this.validarNumeroRua(numero) && complementoValido
     }
 
 } export default EnderecoUsuarioServices
