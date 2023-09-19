@@ -18,7 +18,7 @@ class PetsServices extends ValidacaoServices {
         return idade.length > 2
     }
 
-    static async validarCampos(nome, raca, peso, idade, idUnidade){
+    static async validarCampos(nome, raca, peso, idade){
         return this.validarNome(nome) && this.validarRaca(raca) && this.validarPeso(peso) && this.validarIdade(idade)
     }
 
