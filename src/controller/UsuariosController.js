@@ -26,7 +26,7 @@ class UsuariosController {
         app.post("/Usuarios", async (req, res) => {
             const body = req.body
             const valido = UsuariosServices.validarCampos(...Object.values(body))
-            const enderecoValido = EnderecoUsuarioServices.validarBusca(body.id_endereco_usuario)
+            const enderecoValido = await EnderecoUsuarioServices.validarBusca(body.id_endereco_usuario)
             if(valido && enderecoValido){
                 await UsuariosRepository.criarUsuario(body)
                 res.status(201).json({ message: 'Usuário criado com sucesso' })
