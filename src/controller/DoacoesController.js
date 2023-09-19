@@ -40,7 +40,7 @@ class DoacoesController {
         app.put("/doacoes/:id", async (req, res) => {
             const id = req.params.id
             const data = req.body
-            const valido = DoacoesServices.validarBusca(id)
+            const valido = await DoacoesServices.validarBusca(id)
             if (valido) {
                 await DoacoesRepository.atualizarDoacoes(id, data)
                 res.status(200).json({ message: "Doação atualizada com sucesso" })
