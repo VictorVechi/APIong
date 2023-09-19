@@ -52,7 +52,7 @@ class DoacoesController {
 
         app.delete("/doacoes/:id", async (req, res) => {
             const id = req.params.id
-            const valido = DoacoesServices.validarBusca(id)
+            const valido = await DoacoesServices.validarBusca(id)
             if (valido) {
                 await DoacoesRepository.deletarDoacoes(id)
                 res.status(200).json({ message: 'Doação deletada com sucesso' })
