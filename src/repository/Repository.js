@@ -7,7 +7,7 @@ class Repository {
      * @param {Object} data 
      */
     static async create(mongoModel, data){
-        await mongoModel.create(data)
+        return await mongoModel.create(data)
     }
 
     /**

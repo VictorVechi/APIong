@@ -19,9 +19,9 @@ class ValidacaoServices {
     }
 
     static validarEmail(email){
-        const index = email.value.indexOf("@")
-        const usuario = email.value.substring(0, index);
-        const dominio = email.value.substring(index + 1, email.value.length);
+        const index = email.indexOf("@")
+        const usuario = email.substring(0, index);
+        const dominio = email.substring(index + 1, email.length);
 
         if ((usuario.length >=1) &&
             (dominio.length >=3) &&
