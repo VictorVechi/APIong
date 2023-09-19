@@ -1,4 +1,4 @@
-import EnderecoUnidade from "../model/EnderecoUnidade.js"
+import EnderecoUnidade from "../model/EnderecoUnidadeModel.js"
 import ValidacaoServices from "./ValidacaoServices.js"
 
 class EnderecoUnidadeServices extends ValidacaoServices {

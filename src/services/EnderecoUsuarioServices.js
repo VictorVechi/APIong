@@ -1,4 +1,4 @@
-import EnderecoUsuario from "../model/EnderecoUsuario.js"
+import EnderecoUsuario from "../model/EnderecoUsuarioModel.js"
 import ValidacaoServices from "./ValidacaoServices.js"
 
 class EnderecoUsuarioServices extends ValidacaoServices {
