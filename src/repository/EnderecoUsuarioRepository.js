@@ -8,7 +8,9 @@ class EnderecoUsuarioRepository extends Repository {
      * @param {*} data 
      */
     static async criarEnderecoUsuario(data){
-        await this.create(EnderecoUsuario, data)
+        const response = await this.create(EnderecoUsuario, data)
+        const id = JSON.stringify(response._id)
+        return id
     }
 
     /**
