@@ -4,7 +4,10 @@ class ValidacaoServices {
 
     static async exists(MongooseModel, id){
         try{
-            await Repository.findById(MongooseModel, id)
+            const response = await Repository.findById(MongooseModel, id)
+            if(response == null){
+                throw new error()
+            }
             return true
         }catch(error){
             return false 
