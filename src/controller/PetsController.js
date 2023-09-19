@@ -27,7 +27,7 @@ class PetsController {
         app.post("/pets", async (req, res) => {
             const body = req.body
             const valido = PetsServices.validarCampos(...Object.values(body))
-            const unidade = EnderecoUnidadeServices.validarBusca(body.id_unidade)
+            const unidade = await EnderecoUnidadeServices.validarBusca(body.id_unidade)
             if(valido && unidade){
                 await PetsRepository.criarPet(body)
                 res.status(201).json({ message: 'Pet criado com sucesso' })
