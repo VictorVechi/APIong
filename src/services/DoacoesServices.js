@@ -8,7 +8,7 @@ class DoacoesServices extends ValidacaoServices {
         return response
     }  
 
-    static validarCampos(cpf_cnpj, valor){
+    static validarCampos(valor, cpf_cnpj){
         const validaCpf = this.validarCpf_Cnpj(cpf_cnpj)
         const validaValor = this.validarValorDoacao(valor)
         return validaCpf && validaValor
