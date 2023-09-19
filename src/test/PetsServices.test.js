@@ -30,3 +30,17 @@ describe("Peso", ()=>{
         expect(PetsServices.validarPeso("4")).toBe(true)
     })
 })
+
+describe("Idade", ()=>{
+    test("Retornando falso", ()=>{
+        expect(PetsServices.validarIdade("a")).toBe(false)
+        expect(PetsServices.validarIdade("aa")).toBe(false)
+        expect(PetsServices.validarIdade("2")).toBe(false)
+        expect(PetsServices.validarIdade({})).toBe(false)
+    })
+
+    test("Retornando verdadeiro", ()=>{
+        expect(PetsServices.validarIdade("3 meses")).toBe(true)
+        expect(PetsServices.validarIdade("1 ano")).toBe(true)
+    })
+})
