@@ -49,7 +49,7 @@ class UnidadesController {
 
         app.delete("/unidades/:id", async (req, res) => {
             const id = req.params.id
-            const valido = UnidadesServices.validarBusca(id)
+            const valido = await UnidadesServices.validarBusca(id)
             if(valido){
                 await UnidadesRepository.deletarUnidades(id)
                 res.status(200).json({ message: 'Unidade deletada com sucesso' })
