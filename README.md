@@ -34,7 +34,7 @@ $ git clone https://github.com/VictorVechi/APIong.git
 $ cd APIong
 ```
 
-2. Use o comando `npm instal` para instalar as dependências.
+2. Use o comando `npm install` para instalar as dependências.
 
 ```bash
 # Instalando as dependências
