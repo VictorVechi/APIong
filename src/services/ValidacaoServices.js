@@ -19,6 +19,7 @@ class ValidacaoServices {
     }
 
     static validarEmail(email){
+        email = String (email)
         const index = email.indexOf("@")
         const usuario = email.substring(0, index);
         const dominio = email.substring(index + 1, email.length);

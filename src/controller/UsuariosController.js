@@ -7,12 +7,12 @@ class UsuariosController {
      */
 
     static rotas(app) {
-        app.get("/Usuarios", async (req, res) => {
+        app.get("/usuarios", async (req, res) => {
             const usuarios = await UsuariosRepository.buscarUsuarios()
             res.status(200).json(usuarios)
         })
 
-        app.get("/Usuarios/:id", async (req, res) => {
+        app.get("/usuarios/:id", async (req, res) => {
             const id = req.params.id
             const valido = await UsuariosServices.validarBusca(id)
             if(valido){   
@@ -23,7 +23,7 @@ class UsuariosController {
             }
         })
 
-        app.post("/Usuarios", async (req, res) => {
+        app.post("/usuarios", async (req, res) => {
             const body = req.body
             const valido = UsuariosServices.validarCampos(...Object.values(body))
             const enderecoValido = await EnderecoUsuarioServices.validarBusca(body.id_endereco_usuario)
@@ -35,7 +35,7 @@ class UsuariosController {
             }
         })
 
-        app.put("/Usuarios/:id", async (req, res) => {
+        app.put("/usuarios/:id", async (req, res) => {
             const id = req.params.id
             const data = req.body
             const valido = await UsuariosServices.validarBusca(id)
