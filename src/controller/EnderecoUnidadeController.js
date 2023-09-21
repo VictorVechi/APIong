@@ -39,7 +39,7 @@ class EnderecoUnidadeController {
 			const valido = await EnderecoUnidadeServices.validarBusca(id)
 			if (valido) {
 				await EnderecoUnidadeRepository.atualizarEnderecoUnidade(id, data)
-				res.status(200).json({ message: "Endereço da Unidade atualizado com sucesso" })
+				res.status(204).json({ message: "Endereço da Unidade atualizado com sucesso" })
 			} else {
 				res.status(404).json({ message: "Endereço não encontrado" })
 			}
@@ -50,7 +50,7 @@ class EnderecoUnidadeController {
 			const valido = await EnderecoUnidadeServices.validarBusca(id)
 			if (valido) {
 				await EnderecoUnidadeRepository.deletarEnderecoUnidade(id)
-				res.status(200).json({ message: 'Endereço da Unidade deletado com sucesso' })
+				res.status(204).json({ message: 'Endereço da Unidade deletado com sucesso' })
 			} else {
 				res.status(404).json({ message: "Endereço não encontrado" })
 			}

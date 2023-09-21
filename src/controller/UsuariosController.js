@@ -41,7 +41,7 @@ class UsuariosController {
             const valido = await UsuariosServices.validarBusca(id)
             if(valido){   
                 await UsuariosRepository.atualizarUsuarios(id, data)
-                res.status(200).json({ message: "Usuário atualizado com sucesso" })
+                res.status(204).json({ message: "Usuário atualizado com sucesso" })
             } else {
                 res.status(404).json({message:"Usuário não encontrado"})
             }
@@ -52,7 +52,7 @@ class UsuariosController {
             const valido = await UsuariosServices.validarBusca(id)
             if(valido){   
                 await UsuariosRepository.deletarUsuarios(id)
-                res.status(200).json({ message: 'Usuário deletado com sucesso' })
+                res.status(204).json({ message: 'Usuário deletado com sucesso' })
             } else {
                 res.status(404).json({message:"Usuário não encontrado"})
             }

@@ -43,7 +43,7 @@ class DoacoesController {
             const valido = await DoacoesServices.validarBusca(id)
             if (valido) {
                 await DoacoesRepository.atualizarDoacoes(id, data)
-                res.status(200).json({ message: "Doação atualizada com sucesso" })
+                res.status(204).json({ message: "Doação atualizada com sucesso" })
             } else {
                 res.status(404).json({ message: "Doação não encontrada" })
             }
@@ -55,7 +55,7 @@ class DoacoesController {
             const valido = await DoacoesServices.validarBusca(id)
             if (valido) {
                 await DoacoesRepository.deletarDoacoes(id)
-                res.status(200).json({ message: 'Doação deletada com sucesso' })
+                res.status(204).json({ message: 'Doação deletada com sucesso' })
             } else {
                 res.status(404).json({ message: "Doação não encontrada" })
             }

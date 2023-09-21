@@ -43,7 +43,7 @@ class PetsController {
 
             if (valido) {
                 await PetsRepository.atualizarPet(id, data)
-                res.status(200).json({ message: "Pet atualizado com sucesso" })
+                res.status(204).json({ message: "Pet atualizado com sucesso" })
             } else {
                 res.status(404).json({ error: `Pet não encontrado` })
             }
@@ -54,7 +54,7 @@ class PetsController {
             const valido = await PetsServices.validarBusca(id)
             if (valido) {
                 await PetsRepository.deletarPet(id)
-                res.status(200).json({ message: 'Pet deletado com sucesso' })
+                res.status(204).json({ message: 'Pet deletado com sucesso' })
             } else {
                 res.status(404).json({ error: `Pet não encontrado` })
             }

@@ -41,7 +41,7 @@ class UnidadesController {
             const valido = await UnidadesServices.validarBusca(id)
             if(valido){
                 await UnidadesRepository.atualizarUnidades(id, data)
-                res.status(200).json({ message: "Unidade atualizada com sucesso" })
+                res.status(204).json({ message: "Unidade atualizada com sucesso" })
             } else {
                 
             }
@@ -52,7 +52,7 @@ class UnidadesController {
             const valido = await UnidadesServices.validarBusca(id)
             if(valido){
                 await UnidadesRepository.deletarUnidades(id)
-                res.status(200).json({ message: 'Unidade deletada com sucesso' })
+                res.status(204).json({ message: 'Unidade deletada com sucesso' })
             } else {
                 res.status(404).json({message:"Unidade não encontrada"})
             }
