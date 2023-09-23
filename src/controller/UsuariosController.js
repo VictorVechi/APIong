@@ -16,7 +16,7 @@ class UsuariosController {
             const id = req.params.id
             const valido = await UsuariosServices.validarBusca(id)
             if(valido){   
-                const usuario = await UsuariosRepository.buscarUsuarioPorId(id)
+                const usuario = await UsuariosRepository.buscarUsuariosPorId(id)
                 res.status(200).json(usuario)
             } else {
                 res.status(404).json({message:"Usuário não encontrado"})
