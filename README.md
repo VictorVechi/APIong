@@ -55,7 +55,7 @@ PORT= PortaDaAPI (exemplo: 3000)
 $ npm start
 ```
 ## Banco de dados e rotas
-<p>Nossa API possui 5 collections, tais quais:</p>
+<p>Nossa API possui 6 collections, tais quais:</p>
 
 <ul>
 <li>Doações</li>
