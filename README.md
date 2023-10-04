@@ -208,79 +208,79 @@ http://localhost:3000/pets/65046310f7221b9f02150b8c
 }
 ```
 
-<p>Exemplo de resposta de Pets:</p>
+<p>Exemplo de resposta (GET) de Pets:</p>
 
 ```json
-    {
-        "_id": "6508d24d437c5c59e0d8393b",
-		"nome": "Rafael",
-		"raca": "tartaruga",
-		"peso": 12,
-		"idade": "80 anos",
-		"id_unidade": "65079d364d42bc6b00639650",
-		"__v": 0
-    }
+{
+    "_id": "6508d24d437c5c59e0d8393b",
+	"nome": "Rafael",
+	"raca": "tartaruga",
+	"peso": 12,
+	"idade": "80 anos",
+	"id_unidade": "65079d364d42bc6b00639650",
+	"__v": 0
+}
 ```
 
-<p>Exemplo de resposta de Endereço do Usuário:</p>
+<p>Exemplo de resposta (GET) de Endereço do Usuário:</p>
 
 ```json
-    {
-        "_id": "6507aca26de2cb4ed4d590d8",
-		"cep": "838443",
-		"rua": "ja to ali santos",
-		"numero": "554",
-		"complemento": "longe da vila perida",
-		"__v": 0
-    }
+{
+    "_id": "6507aca26de2cb4ed4d590d8",
+	"cep": "838443",
+	"rua": "ja to ali santos",
+	"numero": "554",
+	"complemento": "longe da vila perida",
+	"__v": 0
+}
 ```
 
-<p>Exemplo de resposta de Endereço da Unidade:</p>
+<p>Exemplo de resposta (GET) de Endereço da Unidade:</p>
 
 ```json
-    {
-        "_id": "650c4a54405067b3bcdd542c",
-		"cep": "82980410",
-		"rua": "Rua miguel pedro abib",
-		"numero": "590",
-		"__v": 0
-    }
+{
+   "_id": "650c4a54405067b3bcdd542c",
+	"cep": "82980410",
+	"rua": "Rua miguel pedro abib",
+	"numero": "590",
+	"__v": 0
+}
 ```
 
-<p>Exemplo de resposta de Unidade:</p>
+<p>Exemplo de resposta (GET) de Unidade:</p>
 
 ```json
-    {
-        "_id": "650c4d2ad32e0e6147e7630f",
-        "email": "unidadeu@gmail.com",
-        "telefone": "44444444444",
-        "__v": 0
-    }
+{
+    "_id": "650c4d2ad32e0e6147e7630f",
+    "email": "unidadeu@gmail.com",
+    "telefone": "44444444444",
+    "__v": 0
+}
 ```
 
-<p>Exemplo de resposta de Usuário:</p>
+<p>Exemplo de resposta (GET) de Usuário:</p>
 
 ```json
-    {
-        "_id": "650851c2a7324f8af4f642a2",
-		"nome": "Leonardo",
-		"email": "aaaa@aa",
-		"telefone": "12424124",
-		"id_endereco_usuario": "aASF23",
-		"__v": 0
-    }
+{
+    "_id": "650851c2a7324f8af4f642a2",
+	"nome": "Leonardo",
+	"email": "aaaa@aa",
+	"telefone": "12424124",
+	"id_endereco_usuario": "aASF23",
+	"__v": 0
+}
 ```
 
-<p>Exemplo de resposta de Doações:</p>
+<p>Exemplo de resposta (GET) de Doações:</p>
 
 ```json
-    {
-        "_id": "650799ce4ae9a0de4219585a",
-        "valor": 2000,
-        "data": "17/09/2023",
-        "cpf_cnpj": "14257803932",
-        "__v": 0
-    }
+{
+    "_id": "650799ce4ae9a0de4219585a",
+    "valor": 2000,
+    "data": "17/09/2023",
+    "cpf_cnpj": "14257803932",
+    "__v": 0
+}
 ```
 
 Desenvolvido por: Francheska Oliveira, José Proença, Rafael Fantin e Victor Vechi
