@@ -1,6 +1,7 @@
 import UsuariosRepository from "../repository/UsuariosRepository.js"
 import UsuariosServices from "../services/UsuariosServices.js"
 import EnderecoUsuarioServices from "../services/EnderecoUsuarioServices.js"
+import CryptoJS from "crypto-js"
 class UsuariosController {
     /**
      * @param {Express} app 
@@ -25,6 +26,8 @@ class UsuariosController {
 
         app.post("/usuarios", async (req, res) => {
             const body = req.body
+            const senha = CryptoJS.MD5.apply(req.get("password"))
+            body.senha = senha
             const valido = UsuariosServices.validarCampos(...Object.values(body))
             const enderecoValido = await EnderecoUsuarioServices.validarBusca(body.id_endereco_usuario)
             if(valido && enderecoValido){
@@ -32,6 +35,26 @@ class UsuariosController {
                 res.status(201).json({ message: 'Usuário criado com sucesso' })
             } else {
                 res.status(400).json({message:"Operação inválida, verifique os campos e tente novamente"})
+            }
+        })
+
+        app.post("/usuarios/login", async (req, res) => {
+
+            const {email} = req.body
+            const senha = CryptoJS.MD5.apply(req.get("password"))
+            const usuario = await UsuariosRepository.loginUsuario(email)
+
+            try {
+                if(!usuario){
+                    res.status(401).json({ message: "Email não encontrado.", success: false });
+                }
+                
+                if (usuario.senha != senha){
+                    res.status(401).json({ message: "Algo deu errado", success: false });
+                }
+                res.status(200).json({data:usuario, success: true });
+            } catch (error){
+                res.status(401).json({message:'error!'})
             }
         })
 

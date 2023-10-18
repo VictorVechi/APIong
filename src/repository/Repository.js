@@ -38,8 +38,8 @@ class Repository {
      * @param {String} valor 
      * @returns {Data}
      */
-    static async findByKey(mongoModel, chave, valor){
-        const response = await mongoModel.findOne({[chave]:valor})
+    static async findByKey(mongoModel, campo){
+        const response = await mongoModel.findOne(campo)
         return response
     }
 

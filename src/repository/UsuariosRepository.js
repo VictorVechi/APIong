@@ -16,6 +16,11 @@ class UsuariosRepository extends Repository {
         return response
     }
 
+    static async loginUsuario(valor){
+        const response = await this.findByKey(Usuarios,{email:valor})
+        return response 
+    }
+
     static async atualizarUsuarios(id,data){
         await this.updateById(Usuarios, id, data)
     }
