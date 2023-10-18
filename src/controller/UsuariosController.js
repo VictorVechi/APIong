@@ -27,10 +27,10 @@ class UsuariosController {
         app.post("/usuarios", async (req, res) => {
             const body = req.body
             const senha = CryptoJS.MD5.apply(req.get("password"))
+            body.endereco = ''
             body.senha = senha
             const valido = UsuariosServices.validarCampos(...Object.values(body))
-            const enderecoValido = await EnderecoUsuarioServices.validarBusca(body.id_endereco_usuario)
-            if(valido && enderecoValido){
+            if(valido){
                 await UsuariosRepository.criarUsuario(body)
                 res.status(201).json({ message: 'Usuário criado com sucesso' })
             } else {
