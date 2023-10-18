@@ -26,8 +26,8 @@ class UnidadesController {
         app.post("/unidades", async (req, res) => {
             const body = req.body
             const valido = UnidadesServices.validarCampos(...Object.values(body))
-            const unidade = await EnderecoUnidadeServices.validarBusca(body.id_endereco)
-            if(valido && unidade){
+            body.endereco = ''
+            if(valido){
                 await UnidadesRepository.criarUnidades(body)
                 res.status(201).json({ message: 'Unidade criada com sucesso' })
             } else {
