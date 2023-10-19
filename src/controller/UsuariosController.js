@@ -42,7 +42,7 @@ class UsuariosController {
 
             const {email} = req.body
             const senha = CryptoJS.MD5.apply(req.get("password"))
-            const usuario = await UsuariosRepository.loginUsuario(email)
+            const usuario = await UsuariosRepository.buscarUsuarioPorEmail(email)
 
             try {
                 if(!usuario){

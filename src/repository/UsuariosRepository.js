@@ -16,7 +16,7 @@ class UsuariosRepository extends Repository {
         return response
     }
 
-    static async loginUsuario(valor){
+    static async buscarUsuarioPorEmail(valor){
         const response = await this.findByKey(Usuarios,{email:valor})
         return response 
     }
