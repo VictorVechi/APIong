@@ -24,6 +24,7 @@ class UsuariosController {
             }
         })
 
+
         app.post("/usuarios", async (req, res) => {
             const body = req.body
             const senha = CryptoJS.MD5.apply(req.get("password"))
@@ -53,6 +54,22 @@ class UsuariosController {
                     res.status(401).json({ message: "Algo deu errado", success: false });
                 }
                 res.status(200).json({data:usuario, success: true });
+            } catch (error){
+                res.status(401).json({message:'error!'})
+            }
+        })
+
+        app.post("/usuarios/email", async (req, res) => {
+
+            const {email} = req.body
+            const usuario = await UsuariosRepository.buscarUsuarioPorEmail(email)
+
+            try {
+                if(!usuario){
+                    res.status(200).json({ success: true });
+                } else {
+                    res.status(401).json({ message: "Email inválido", success: false });
+                }
             } catch (error){
                 res.status(401).json({message:'error!'})
             }
