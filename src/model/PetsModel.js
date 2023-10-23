@@ -5,7 +5,8 @@ const Pets = mongoose.model("Pets", {
     raca: String,
     peso: Number,
     idade: String,
-    id_unidade: String
+    id_unidade: String,
+    descricao: String
 })
 
 export default Pets;
