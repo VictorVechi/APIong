@@ -59,7 +59,7 @@ class ValidacaoServices {
     }
 
     static validarValorDoacao(valor){
-        return !isNaN(valor)
+        return valor != null
     }
 
 } export default ValidacaoServices

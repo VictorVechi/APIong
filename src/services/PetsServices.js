@@ -11,7 +11,7 @@ class PetsServices extends ValidacaoServices {
     }
 
     static validarPeso(peso) {
-        return !isNaN(peso)
+        return  peso != null
     }
 
     static validarIdade(idade) {
