@@ -30,6 +30,7 @@ class UsuariosController {
             const senha = md5(req.get("password"))
             body.endereco = ''
             body.senha = senha
+            body.admin = false
             const valido = UsuariosServices.validarCampos(...Object.values(body))
             if(valido){
                 await UsuariosRepository.criarUsuario(body)

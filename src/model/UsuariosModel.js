@@ -5,7 +5,8 @@ const Usuarios = mongoose.model("Usuarios", {
     email: String,
     senha: String,
     telefone: String,
-    id_endereco_usuario: String
+    id_endereco_usuario: String,
+    admin: Boolean
 })
 
 export default Usuarios
