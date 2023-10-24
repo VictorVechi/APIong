@@ -28,6 +28,7 @@ class PetsController {
             const body = req.body
             const valido = PetsServices.validarCampos(...Object.values(body))
             body.id_unidade = ''
+            body.usuarios = []
             if(valido){
                 await PetsRepository.criarPet(body)
                 res.status(201).json({ message: 'Pet criado com sucesso' })
