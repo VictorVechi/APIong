@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const Pets = mongoose.model("Pets", {
     nome: String,
     raca: String,
-    peso: Number,
+    peso: String,
     idade: String,
     id_unidade: String,
     descricao: String,
