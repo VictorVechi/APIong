@@ -56,11 +56,9 @@ class UsuariosController {
         })
 
         app.post("/usuarios/email", async (req, res) => {
-
-            const {email} = req.body
-            const usuario = await UsuariosRepository.buscarUsuarioPorEmail(email)
-
             try {
+                const email = req.body
+                const usuario = await UsuariosRepository.buscarUsuarioPorEmail(email.email)
                 if(!usuario){
                     res.status(200).json({ success: true });
                 } else {
