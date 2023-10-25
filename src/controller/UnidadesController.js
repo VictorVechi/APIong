@@ -25,14 +25,9 @@ class UnidadesController {
 
         app.post("/unidades", async (req, res) => {
             const body = req.body
-            const valido = UnidadesServices.validarCampos(...Object.values(body))
-            body.endereco = ''
-            if(valido){
-                await UnidadesRepository.criarUnidades(body)
-                res.status(201).json({ message: 'Unidade criada com sucesso' })
-            } else {
-                res.status(400).json({ message: "Operação inválida, verifique os campos e tente novamente"})
-            }
+
+            await UnidadesRepository.criarUnidades(body)
+            res.status(201).json({ message: 'Unidade criada com sucesso' })
         })
 
         app.put("/unidades/:id", async (req, res) => {

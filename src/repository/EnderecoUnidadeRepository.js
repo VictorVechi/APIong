@@ -9,7 +9,7 @@ class EnderecoUnidadeRepository extends Repository {
      */
     static async criarEnderecoUnidade(data){
         const response = await this.create(EnderecoUnidade, data)
-        const id = JSON.stringify(response._id)
+        const id = response._id
         return id
     }
 

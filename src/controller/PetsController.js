@@ -29,12 +29,8 @@ class PetsController {
             const valido = PetsServices.validarCampos(...Object.values(body))
             body.id_unidade = ''
             body.usuarios = []
-            if(valido){
-                await PetsRepository.criarPet(body)
-                res.status(201).json({ message: 'Pet criado com sucesso' })
-            } else {
-                res.status(400).json({message:"Operação inválida, verifique os campos e tente novamente"})
-            }
+            await PetsRepository.criarPet(body)
+            res.status(201).json({ message: 'Pet criado com sucesso' })
         })
 
         app.put("/pets/:id", async (req, res) => {
@@ -48,6 +44,12 @@ class PetsController {
             } else {
                 res.status(404).json({ error: `Pet não encontrado` })
             }
+        })
+
+        app.get("/pets/unidade/:idUnidade", async (req, res) => {
+            const id = req.params.idUnidade
+            const pet = await PetsRepository.buscarPetsPorUnidade(id)
+            res.status(200).json(pet)
         })
 
         app.delete("/pets/:id", async (req, res) => {

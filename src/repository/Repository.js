@@ -43,6 +43,11 @@ class Repository {
         return response
     }
 
+    static async findAllBykey(mongoModel, campo){
+        const response = await mongoModel.find(campo)
+        return response
+    }
+
     /**
      * Método geral de atualização por id
      * @param {mongooseModel} mongoModel 

@@ -17,6 +17,11 @@ class PetsRepository extends Repository{
         return response
     }
 
+    static async buscarPetsPorUnidade(idUnidade){
+        const response = await this.findAllBykey(Pets, {id_unidade:idUnidade})
+        return response
+    }
+
     static async atualizarPet(id, data){
         await this.updateById(Pets, id, data)
     }

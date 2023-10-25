@@ -28,16 +28,11 @@ class UsuariosController {
         app.post("/usuarios", async (req, res) => {
             const body = req.body
             const senha = md5(req.get("password"))
-            body.endereco = ''
             body.senha = senha
             body.admin = false
-            const valido = UsuariosServices.validarCampos(...Object.values(body))
-            if(valido){
-                await UsuariosRepository.criarUsuario(body)
-                res.status(201).json({ message: 'Usuário criado com sucesso' })
-            } else {
-                res.status(400).json({message:"Operação inválida, verifique os campos e tente novamente"})
-            }
+           
+            await UsuariosRepository.criarUsuario(body)
+            res.status(201).json({ message: 'Usuário criado com sucesso' })
         })
 
         app.post("/usuarios/login", async (req, res) => {
@@ -48,7 +43,7 @@ class UsuariosController {
                 if(!usuario){
                     res.status(401).json({ message: "Email não encontrado.", success: false });
                 }
-        
+
                 if (usuario.senha != senha){
                     res.status(401).json({ message: "Algo deu errado", success: false });
                 } else {
