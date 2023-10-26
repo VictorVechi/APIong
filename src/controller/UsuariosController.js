@@ -62,7 +62,7 @@ class UsuariosController {
                 if(!usuario){
                     res.status(200).json({ success: true });
                 } else {
-                    res.status(401).json({ message: "Email inválido", success: false });
+                    res.status(200).json({ success: false });
                 }
             } catch (error){
                 res.status(401).json({message:'error!'})
