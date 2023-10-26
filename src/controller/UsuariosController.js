@@ -37,18 +37,19 @@ class UsuariosController {
 
         app.post("/usuarios/login", async (req, res) => {
             try {
-                const {email} = req.body
-                const usuario = await UsuariosRepository.buscarUsuarioPorEmail(email)
+                const email = req.body
+                const usuario = await UsuariosRepository.buscarUsuarioPorEmail(email.email)
                 const senha = md5(req.get("password"))
+                console.log(usuario)
                 if(!usuario){
                     res.status(401).json({ message: "Email não encontrado.", success: false });
-                }
-
-                if (usuario.senha != senha){
+                } else if (usuario.senha != senha){
                     res.status(401).json({ message: "Algo deu errado", success: false });
                 } else {
                     res.status(200).json({data:usuario, success: true, senha:senha });
                 }
+
+                
                 
             } catch (error){
                 res.status(401).json({message:'error!'})
